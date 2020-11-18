@@ -1,5 +1,7 @@
 from fastapi import FastAPI
+from pycaret.regression import load_model, predict_model
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 import random
 import pickle
 
@@ -22,29 +24,64 @@ import pickle
 # Child = daughter, son, stepdaughter, stepson
 # Some children travelled only with a nanny, therefore parch=0 for them
 
+#Det jeg har funnet som kan ha størst påvirkning er 
+#   kjønn
+#   pris på billetten
+#   alder
+#   har lugar
+
 with open('./model/model.pkl', 'rb') as f:
-    data = pickle.load(f)
+    load_model = pickle.load(f)
 
 def get_prediction(
     pclass,
     age,
     sibsp,
+    parch    
+):
+
+    print(load_model)
+
+    model = {
+        "PassengerId": 0,
+        "Survived" : 0,
+        "Pclass" : 0,
+        "Name": "Ole",
+        "Sex": 0,
+        "Age": 0,
+        "SibSp": 0,
+        "Parch": 0,
+        "Ticket": 0,
+        "Fare": 0,
+        "Cabin": 0,
+        "Embarked": 0
+    }
+
+    x = [[pclass, age, sibsp, parch]]
+
+    y = predict_model(load_model, data = x)
+
+    return {int(y)}
+
+def get_dummy_prediction(
+    pclass,
+    age,
+    sibsp,
     parch
 ):
-    x = [[
-        pclass,
-        age,
-        sibsp,
-        parch
-    ]]
-
-    y = data.predict(x)[0]
-    prob = data.predict_proba(x)[0].tolist()
 
     return {random.randint(0, 1)}
     
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins = ['*'],
+    allow_credentials = True,
+    allow_methods = ['*'],
+    allow_headers=['*']
+)
 
 # Model for POST request
 class ModelParams(BaseModel):

@@ -1,0 +1,22 @@
+2020-11-18 20:10:24,505:INFO:Initializing predict_model()
+2020-11-18 20:10:24,505:INFO:predict_model(estimator=['PassengerId' 'Pclass' 'Sex' 'Age' 'SibSp' 'Parch' 'Fare' 'Cabin'
+ 'Embarked'], probability_threshold=None, encoded_labels=True, round=4, verbose=True, ml_usecase=MLUsecase.REGRESSION, display=None)
+2020-11-18 20:10:24,505:INFO:Checking exceptions
+2020-11-18 20:10:24,506:INFO:Preloading libraries
+2020-11-18 20:10:24,506:ERROR:Pipeline not found. Exception:
+2020-11-18 20:10:24,535:ERROR:Traceback (most recent call last):
+  File "c:\python38\lib\site-packages\pycaret\internal\tabular.py", line 8286, in predict_model
+    dtypes = prep_pipe.named_steps["dtypes"]
+NameError: name 'prep_pipe' is not defined
+
+2020-11-18 20:21:12,084:INFO:Initializing predict_model()
+2020-11-18 20:21:12,084:INFO:predict_model(estimator=['PassengerId' 'Pclass' 'Sex' 'Age' 'SibSp' 'Parch' 'Fare' 'Cabin'
+ 'Embarked'], probability_threshold=None, encoded_labels=True, round=4, verbose=True, ml_usecase=MLUsecase.REGRESSION, display=None)
+2020-11-18 20:21:12,085:INFO:Checking exceptions
+2020-11-18 20:21:12,086:INFO:Preloading libraries
+2020-11-18 20:21:12,086:ERROR:Pipeline not found. Exception:
+2020-11-18 20:21:12,088:ERROR:Traceback (most recent call last):
+  File "c:\python38\lib\site-packages\pycaret\internal\tabular.py", line 8286, in predict_model
+    dtypes = prep_pipe.named_steps["dtypes"]
+NameError: name 'prep_pipe' is not defined
+
