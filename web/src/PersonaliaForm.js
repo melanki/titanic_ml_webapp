@@ -1,15 +1,18 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const PersonaliaForm = () => {
+function PersonaliaForm (parentCallback) {
     
     const [personalia, setPersonalia] = useState(
         {
-            'pclass': 0,
+            'pclass': "1",
+            'sex'   : "1",
             'age'   : 25,
             'sibsp' : 2,
             'parch' : 1,
+            'fare'  : 50,
+            'cabin' : "X"
         }
     )
 
@@ -17,18 +20,25 @@ const PersonaliaForm = () => {
 
     const submit = e => {
         e.preventDefault()
-        fetch(`${url}/predict`, {
+        let getPrediction = function() {fetch(`${url}/predict`, {
             method: 'POST', 
             body: JSON.stringify({
                 "pclass": parseInt(personalia.pclass),
+                "sex" : parseInt(personalia.sex),
                 "age": personalia.age,
                 "sibsp": personalia.sibsp,
-                "parch": personalia.parch
+                "parch": personalia.parch,
+                "fare": personalia.fare,
+                "cabin": personalia.cabin
             }),
             headers: { 'Content-Type': 'application/json'},
          })
             .then(res => res.json())
-            .then(json => console.log(`Prediction: ${(json === 1)}`))
+            .then(json => {return json})
+        }
+        const prediction = getPrediction()
+        console.log(parentCallback)
+        handleChange(prediction)
     }
 
     const handleChange = e => {
@@ -41,9 +51,16 @@ const PersonaliaForm = () => {
             <Form.Group controlId="pclass">
                 <Form.Label>Passenger class</Form.Label>
                     <div key={'inline-checkbox'} className = "mb-3">
-                        <Form.Check type="radio" name="pclass" checked={personalia.pclass === "1"} onChange={handleChange} value="1" inline label = "1" id = 'inline-checkbox-1' />
-                        <Form.Check type="radio" name="pclass" checked={personalia.pclass === "2"} onChange={handleChange} value="2" inline label = "2" id = 'inline-checkbox-2' />
-                        <Form.Check type="radio" name="pclass" checked={personalia.pclass === "3"} onChange={handleChange} value="3" inline label = "3" id = 'inline-checkbox-3' />
+                        <Form.Check type="radio" name="pclass" checked={personalia.pclass === "1"} onChange={handleChange} value="1" inline label = "Poor" id = 'inline-checkbox-1' />
+                        <Form.Check type="radio" name="pclass" checked={personalia.pclass === "2"} onChange={handleChange} value="2" inline label = "More Poor" id = 'inline-checkbox-2' />
+                        <Form.Check type="radio" name="pclass" checked={personalia.pclass === "3"} onChange={handleChange} value="3" inline label = "Poorest" id = 'inline-checkbox-3' />
+                    </div>
+            </Form.Group>
+            <Form.Group controlId="sex">
+                <Form.Label>Passenger class</Form.Label>
+                    <div key={'inline-checkbox'} className = "mb-3">
+                        <Form.Check type="radio" name="sex" checked={personalia.sex === "1"} onChange={handleChange} value="male" inline label = "Male" id = 'inline-checkbox-11' />
+                        <Form.Check type="radio" name="sex" checked={personalia.sex === "0"} onChange={handleChange} value="female" inline label = "Female" id = 'inline-checkbox-12' />
                     </div>
             </Form.Group>
             <Form.Group controlId="age">
@@ -78,6 +95,29 @@ const PersonaliaForm = () => {
                         value={personalia.parch}
                         onChange={handleChange}
                     />
+            </Form.Group>
+            <Form.Group controlId="fare">
+            <Form.Label>Fare</Form.Label>
+                    <Form.Control 
+                        required
+                        name="fare"
+                        type="number"
+                        value={personalia.fare}
+                        onChange={handleChange}
+                    />
+            </Form.Group>
+            <Form.Group controlId="cabin">
+                <Form.Label>Cabin</Form.Label>
+                    <div key={'inline-checkbox'} className = "mb-3">
+                        <Form.Check type="radio" name="cabin" checked={personalia.cabin === "X"} onChange={handleChange} value="X" inline label = "X" id = 'cabin-checkbox-1' />
+                        <Form.Check type="radio" name="cabin" checked={personalia.cabin === "C"} onChange={handleChange} value="C" inline label = "C" id = 'cabin-checkbox-2' />
+                        <Form.Check type="radio" name="cabin" checked={personalia.cabin === "B"} onChange={handleChange} value="B" inline label = "B" id = 'cabin-checkbox-3' />
+                        <Form.Check type="radio" name="cabin" checked={personalia.cabin === "D"} onChange={handleChange} value="D" inline label = "D" id = 'cabin-checkbox-4' />
+                        <Form.Check type="radio" name="cabin" checked={personalia.cabin === "E"} onChange={handleChange} value="E" inline label = "E" id = 'cabin-checkbox-5' />
+                        <Form.Check type="radio" name="cabin" checked={personalia.cabin === "A"} onChange={handleChange} value="A" inline label = "A" id = 'cabin-checkbox-6' />
+                        <Form.Check type="radio" name="cabin" checked={personalia.cabin === "F"} onChange={handleChange} value="F" inline label = "F" id = 'cabin-checkbox-7' />
+                        <Form.Check type="radio" name="cabin" checked={personalia.cabin === "G"} onChange={handleChange} value="G" inline label = "G" id = 'cabin-checkbox-8' />
+                    </div>
             </Form.Group>
             <Button variant="primary" type="submit">
                 Submit

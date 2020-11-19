@@ -3375,3 +3375,384 @@
 2020-11-18 20:38:53,187:INFO:Copying test dataset
 2020-11-18 20:38:53,187:INFO:Plot type: learning
 2020-11-18 20:38:53,208:INFO:Fitting Model
+2020-11-19 17:22:07,542:INFO:Initializing plot_model()
+2020-11-19 17:22:07,546:INFO:plot_model(plot=feature, fold=None, use_train_data=False, verbose=True, display=None, estimator=<catboost.core.CatBoostRegressor object at 0x000002697AE816D0>, feature_name=None, fit_kwargs=None, groups=None, label=False, save=False, scale=1, system=True)
+2020-11-19 17:22:07,546:INFO:Checking exceptions
+2020-11-19 17:22:07,552:INFO:Preparing display monitor
+2020-11-19 17:22:07,584:INFO:Preloading libraries
+2020-11-19 17:22:07,596:INFO:Copying training dataset
+2020-11-19 17:22:07,605:INFO:Copying test dataset
+2020-11-19 17:22:07,606:INFO:Plot type: feature
+2020-11-19 17:22:07,624:WARNING:No coef_ found. Trying feature_importances_
+2020-11-19 17:22:07,830:INFO:Visual Rendered Successfully
+2020-11-19 17:22:08,282:INFO:plot_model() succesfully completed......................................
+2020-11-19 17:22:13,251:INFO:Initializing predict_model()
+2020-11-19 17:22:13,251:INFO:predict_model(estimator=StackingRegressor(cv=KFold(n_splits=10, random_state=2761, shuffle=False),
+                  estimators=[('catboost',
+                               <catboost.core.CatBoostRegressor object at 0x000002697C002E20>),
+                              ('lightgbm',
+                               LGBMRegressor(bagging_fraction=0.8,
+                                             bagging_freq=7,
+                                             boosting_type='gbdt',
+                                             class_weight=None,
+                                             colsample_bytree=1.0,
+                                             feature_fraction=0.4,
+                                             importance_type='split',
+                                             learning_rate=0.153, max_de...
+                  final_estimator=RandomForestRegressor(bootstrap=True,
+                                                        ccp_alpha=0.0,
+                                                        criterion='mse',
+                                                        max_depth=8,
+                                                        max_features='sqrt',
+                                                        max_leaf_nodes=None,
+                                                        max_samples=None,
+                                                        min_impurity_decrease=0.0001,
+                                                        min_impurity_split=None,
+                                                        min_samples_leaf=2,
+                                                        min_samples_split=7,
+                                                        min_weight_fraction_leaf=0.0,
+                                                        n_estimators=130,
+                                                        n_jobs=-1,
+                                                        oob_score=False,
+                                                        random_state=2761,
+                                                        verbose=0,
+                                                        warm_start=False),
+                  n_jobs=-1, passthrough=True, verbose=0), probability_threshold=None, encoded_labels=True, round=4, verbose=True, ml_usecase=MLUsecase.REGRESSION, display=None)
+2020-11-19 17:22:13,251:INFO:Checking exceptions
+2020-11-19 17:22:13,251:INFO:Preloading libraries
+2020-11-19 17:22:13,252:INFO:Preparing display monitor
+2020-11-19 17:22:15,096:INFO:Initializing finalize_model()
+2020-11-19 17:22:15,096:INFO:finalize_model(estimator=StackingRegressor(cv=KFold(n_splits=10, random_state=2761, shuffle=False),
+                  estimators=[('catboost',
+                               <catboost.core.CatBoostRegressor object at 0x000002697C002E20>),
+                              ('lightgbm',
+                               LGBMRegressor(bagging_fraction=0.8,
+                                             bagging_freq=7,
+                                             boosting_type='gbdt',
+                                             class_weight=None,
+                                             colsample_bytree=1.0,
+                                             feature_fraction=0.4,
+                                             importance_type='split',
+                                             learning_rate=0.153, max_de...
+                  final_estimator=RandomForestRegressor(bootstrap=True,
+                                                        ccp_alpha=0.0,
+                                                        criterion='mse',
+                                                        max_depth=8,
+                                                        max_features='sqrt',
+                                                        max_leaf_nodes=None,
+                                                        max_samples=None,
+                                                        min_impurity_decrease=0.0001,
+                                                        min_impurity_split=None,
+                                                        min_samples_leaf=2,
+                                                        min_samples_split=7,
+                                                        min_weight_fraction_leaf=0.0,
+                                                        n_estimators=130,
+                                                        n_jobs=-1,
+                                                        oob_score=False,
+                                                        random_state=2761,
+                                                        verbose=0,
+                                                        warm_start=False),
+                  n_jobs=-1, passthrough=True, verbose=0), fit_kwargs=None, groups=None, model_only=True, display=None)
+2020-11-19 17:22:15,101:INFO:Finalizing StackingRegressor(cv=KFold(n_splits=10, random_state=2761, shuffle=False),
+                  estimators=[('catboost',
+                               <catboost.core.CatBoostRegressor object at 0x000002697C002E20>),
+                              ('lightgbm',
+                               LGBMRegressor(bagging_fraction=0.8,
+                                             bagging_freq=7,
+                                             boosting_type='gbdt',
+                                             class_weight=None,
+                                             colsample_bytree=1.0,
+                                             feature_fraction=0.4,
+                                             importance_type='split',
+                                             learning_rate=0.153, max_de...
+                  final_estimator=RandomForestRegressor(bootstrap=True,
+                                                        ccp_alpha=0.0,
+                                                        criterion='mse',
+                                                        max_depth=8,
+                                                        max_features='sqrt',
+                                                        max_leaf_nodes=None,
+                                                        max_samples=None,
+                                                        min_impurity_decrease=0.0001,
+                                                        min_impurity_split=None,
+                                                        min_samples_leaf=2,
+                                                        min_samples_split=7,
+                                                        min_weight_fraction_leaf=0.0,
+                                                        n_estimators=130,
+                                                        n_jobs=-1,
+                                                        oob_score=False,
+                                                        random_state=2761,
+                                                        verbose=0,
+                                                        warm_start=False),
+                  n_jobs=-1, passthrough=True, verbose=0)
+2020-11-19 17:22:15,106:INFO:Initializing create_model()
+2020-11-19 17:22:15,106:INFO:create_model(estimator=StackingRegressor(cv=KFold(n_splits=10, random_state=2761, shuffle=False),
+                  estimators=[('catboost',
+                               <catboost.core.CatBoostRegressor object at 0x000002697C002E20>),
+                              ('lightgbm',
+                               LGBMRegressor(bagging_fraction=0.8,
+                                             bagging_freq=7,
+                                             boosting_type='gbdt',
+                                             class_weight=None,
+                                             colsample_bytree=1.0,
+                                             feature_fraction=0.4,
+                                             importance_type='split',
+                                             learning_rate=0.153, max_de...
+                  final_estimator=RandomForestRegressor(bootstrap=True,
+                                                        ccp_alpha=0.0,
+                                                        criterion='mse',
+                                                        max_depth=8,
+                                                        max_features='sqrt',
+                                                        max_leaf_nodes=None,
+                                                        max_samples=None,
+                                                        min_impurity_decrease=0.0001,
+                                                        min_impurity_split=None,
+                                                        min_samples_leaf=2,
+                                                        min_samples_split=7,
+                                                        min_weight_fraction_leaf=0.0,
+                                                        n_estimators=130,
+                                                        n_jobs=-1,
+                                                        oob_score=False,
+                                                        random_state=2761,
+                                                        verbose=0,
+                                                        warm_start=False),
+                  n_jobs=-1, passthrough=True, verbose=0), fold=None, round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=True, verbose=False, system=False, metrics=None, display=None, kwargs={})
+2020-11-19 17:22:15,106:INFO:Checking exceptions
+2020-11-19 17:22:15,106:INFO:Importing libraries
+2020-11-19 17:22:15,107:INFO:Copying training dataset
+2020-11-19 17:22:15,107:INFO:Defining folds
+2020-11-19 17:22:15,107:INFO:Declaring metric variables
+2020-11-19 17:22:15,108:INFO:Importing untrained model
+2020-11-19 17:22:15,108:INFO:Declaring custom model
+2020-11-19 17:22:15,111:INFO:Stacking Regressor Imported succesfully
+2020-11-19 17:22:15,111:INFO:Starting cross validation
+2020-11-19 17:22:15,111:INFO:Cross validating with KFold(n_splits=10, random_state=2761, shuffle=False), n_jobs=-1
+2020-11-19 17:22:33,425:INFO:Calculating mean and std
+2020-11-19 17:22:33,426:INFO:Creating metrics dataframe
+2020-11-19 17:22:33,429:INFO:Finalizing model
+2020-11-19 17:22:35,556:INFO:Uploading results into container
+2020-11-19 17:22:35,556:INFO:Uploading model into container now
+2020-11-19 17:22:35,556:INFO:create_model_container: 30
+2020-11-19 17:22:35,556:INFO:master_model_container: 30
+2020-11-19 17:22:35,556:INFO:display_container: 8
+2020-11-19 17:22:35,561:INFO:StackingRegressor(cv=KFold(n_splits=10, random_state=2761, shuffle=False),
+                  estimators=[('catboost',
+                               <catboost.core.CatBoostRegressor object at 0x0000026979F50DC0>),
+                              ('lightgbm',
+                               LGBMRegressor(bagging_fraction=0.8,
+                                             bagging_freq=7,
+                                             boosting_type='gbdt',
+                                             class_weight=None,
+                                             colsample_bytree=1.0,
+                                             feature_fraction=0.4,
+                                             importance_type='split',
+                                             learning_rate=0.153, max_de...
+                  final_estimator=RandomForestRegressor(bootstrap=True,
+                                                        ccp_alpha=0.0,
+                                                        criterion='mse',
+                                                        max_depth=8,
+                                                        max_features='sqrt',
+                                                        max_leaf_nodes=None,
+                                                        max_samples=None,
+                                                        min_impurity_decrease=0.0001,
+                                                        min_impurity_split=None,
+                                                        min_samples_leaf=2,
+                                                        min_samples_split=7,
+                                                        min_weight_fraction_leaf=0.0,
+                                                        n_estimators=130,
+                                                        n_jobs=-1,
+                                                        oob_score=False,
+                                                        random_state=2761,
+                                                        verbose=0,
+                                                        warm_start=False),
+                  n_jobs=-1, passthrough=True, verbose=0)
+2020-11-19 17:22:35,561:INFO:create_model() succesfully completed......................................
+2020-11-19 17:22:35,636:INFO:create_model_container: 30
+2020-11-19 17:22:35,636:INFO:master_model_container: 30
+2020-11-19 17:22:35,636:INFO:display_container: 7
+2020-11-19 17:22:35,641:INFO:StackingRegressor(cv=KFold(n_splits=10, random_state=2761, shuffle=False),
+                  estimators=[('catboost',
+                               <catboost.core.CatBoostRegressor object at 0x0000026979F50DC0>),
+                              ('lightgbm',
+                               LGBMRegressor(bagging_fraction=0.8,
+                                             bagging_freq=7,
+                                             boosting_type='gbdt',
+                                             class_weight=None,
+                                             colsample_bytree=1.0,
+                                             feature_fraction=0.4,
+                                             importance_type='split',
+                                             learning_rate=0.153, max_de...
+                  final_estimator=RandomForestRegressor(bootstrap=True,
+                                                        ccp_alpha=0.0,
+                                                        criterion='mse',
+                                                        max_depth=8,
+                                                        max_features='sqrt',
+                                                        max_leaf_nodes=None,
+                                                        max_samples=None,
+                                                        min_impurity_decrease=0.0001,
+                                                        min_impurity_split=None,
+                                                        min_samples_leaf=2,
+                                                        min_samples_split=7,
+                                                        min_weight_fraction_leaf=0.0,
+                                                        n_estimators=130,
+                                                        n_jobs=-1,
+                                                        oob_score=False,
+                                                        random_state=2761,
+                                                        verbose=0,
+                                                        warm_start=False),
+                  n_jobs=-1, passthrough=True, verbose=0)
+2020-11-19 17:22:35,642:INFO:finalize_model() succesfully completed......................................
+2020-11-19 17:22:35,730:INFO:Initializing predict_model()
+2020-11-19 17:22:35,731:INFO:predict_model(estimator=StackingRegressor(cv=KFold(n_splits=10, random_state=2761, shuffle=False),
+                  estimators=[('catboost',
+                               <catboost.core.CatBoostRegressor object at 0x0000026979F50DC0>),
+                              ('lightgbm',
+                               LGBMRegressor(bagging_fraction=0.8,
+                                             bagging_freq=7,
+                                             boosting_type='gbdt',
+                                             class_weight=None,
+                                             colsample_bytree=1.0,
+                                             feature_fraction=0.4,
+                                             importance_type='split',
+                                             learning_rate=0.153, max_de...
+                  final_estimator=RandomForestRegressor(bootstrap=True,
+                                                        ccp_alpha=0.0,
+                                                        criterion='mse',
+                                                        max_depth=8,
+                                                        max_features='sqrt',
+                                                        max_leaf_nodes=None,
+                                                        max_samples=None,
+                                                        min_impurity_decrease=0.0001,
+                                                        min_impurity_split=None,
+                                                        min_samples_leaf=2,
+                                                        min_samples_split=7,
+                                                        min_weight_fraction_leaf=0.0,
+                                                        n_estimators=130,
+                                                        n_jobs=-1,
+                                                        oob_score=False,
+                                                        random_state=2761,
+                                                        verbose=0,
+                                                        warm_start=False),
+                  n_jobs=-1, passthrough=True, verbose=0), probability_threshold=None, encoded_labels=True, round=4, verbose=True, ml_usecase=MLUsecase.REGRESSION, display=None)
+2020-11-19 17:22:35,731:INFO:Checking exceptions
+2020-11-19 17:22:35,731:INFO:Preloading libraries
+2020-11-19 17:22:35,731:INFO:Preparing display monitor
+2020-11-19 17:22:39,961:INFO:Initializing predict_model()
+2020-11-19 17:22:39,961:INFO:predict_model(estimator=StackingRegressor(cv=KFold(n_splits=10, random_state=2761, shuffle=False),
+                  estimators=[('catboost',
+                               <catboost.core.CatBoostRegressor object at 0x0000026979F50DC0>),
+                              ('lightgbm',
+                               LGBMRegressor(bagging_fraction=0.8,
+                                             bagging_freq=7,
+                                             boosting_type='gbdt',
+                                             class_weight=None,
+                                             colsample_bytree=1.0,
+                                             feature_fraction=0.4,
+                                             importance_type='split',
+                                             learning_rate=0.153, max_de...
+                  final_estimator=RandomForestRegressor(bootstrap=True,
+                                                        ccp_alpha=0.0,
+                                                        criterion='mse',
+                                                        max_depth=8,
+                                                        max_features='sqrt',
+                                                        max_leaf_nodes=None,
+                                                        max_samples=None,
+                                                        min_impurity_decrease=0.0001,
+                                                        min_impurity_split=None,
+                                                        min_samples_leaf=2,
+                                                        min_samples_split=7,
+                                                        min_weight_fraction_leaf=0.0,
+                                                        n_estimators=130,
+                                                        n_jobs=-1,
+                                                        oob_score=False,
+                                                        random_state=2761,
+                                                        verbose=0,
+                                                        warm_start=False),
+                  n_jobs=-1, passthrough=True, verbose=0), probability_threshold=None, encoded_labels=True, round=4, verbose=True, ml_usecase=MLUsecase.REGRESSION, display=None)
+2020-11-19 17:22:39,961:INFO:Checking exceptions
+2020-11-19 17:22:39,961:INFO:Preloading libraries
+2020-11-19 17:22:39,961:INFO:Preparing display monitor
+2020-11-19 17:23:49,957:INFO:Initializing save_model()
+2020-11-19 17:23:49,957:INFO:save_model(model=StackingRegressor(cv=KFold(n_splits=10, random_state=2761, shuffle=False),
+                  estimators=[('catboost',
+                               <catboost.core.CatBoostRegressor object at 0x0000026979F50DC0>),
+                              ('lightgbm',
+                               LGBMRegressor(bagging_fraction=0.8,
+                                             bagging_freq=7,
+                                             boosting_type='gbdt',
+                                             class_weight=None,
+                                             colsample_bytree=1.0,
+                                             feature_fraction=0.4,
+                                             importance_type='split',
+                                             learning_rate=0.153, max_de...
+                  final_estimator=RandomForestRegressor(bootstrap=True,
+                                                        ccp_alpha=0.0,
+                                                        criterion='mse',
+                                                        max_depth=8,
+                                                        max_features='sqrt',
+                                                        max_leaf_nodes=None,
+                                                        max_samples=None,
+                                                        min_impurity_decrease=0.0001,
+                                                        min_impurity_split=None,
+                                                        min_samples_leaf=2,
+                                                        min_samples_split=7,
+                                                        min_weight_fraction_leaf=0.0,
+                                                        n_estimators=130,
+                                                        n_jobs=-1,
+                                                        oob_score=False,
+                                                        random_state=2761,
+                                                        verbose=0,
+                                                        warm_start=False),
+                  n_jobs=-1, passthrough=True, verbose=0), model_name=Final Model 17.11.2020, prep_pipe_=Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      id_columns=['PassengerId'],
+                                      ml_usecase='classification',
+                                      numerical_features=['SibSp', 'Parch'],
+                                      target='Survived', time_features=[])),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_valu...
+                ('P_transform', 'passthrough'), ('binn', 'passthrough'),
+                ('rem_outliers', 'passthrough'), ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='Survived')),
+                ('fix_perfect', Remove_100(target='Survived')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough')],
+         verbose=False), verbose=True)
+2020-11-19 17:23:49,957:INFO:Adding model into prep_pipe
+2020-11-19 17:23:50,065:INFO:Final Model 17.11.2020.pkl saved in current working directory
+2020-11-19 17:23:50,083:INFO:Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      id_columns=['PassengerId'],
+                                      ml_usecase='classification',
+                                      numerical_features=['SibSp', 'Parch'],
+                                      target='Survived', time_features=[])),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_valu...
+                                                                         ccp_alpha=0.0,
+                                                                         criterion='mse',
+                                                                         max_depth=8,
+                                                                         max_features='sqrt',
+                                                                         max_leaf_nodes=None,
+                                                                         max_samples=None,
+                                                                         min_impurity_decrease=0.0001,
+                                                                         min_impurity_split=None,
+                                                                         min_samples_leaf=2,
+                                                                         min_samples_split=7,
+                                                                         min_weight_fraction_leaf=0.0,
+                                                                         n_estimators=130,
+                                                                         n_jobs=-1,
+                                                                         oob_score=False,
+                                                                         random_state=2761,
+                                                                         verbose=0,
+                                                                         warm_start=False),
+                                   n_jobs=-1, passthrough=True, verbose=0)]],
+         verbose=False)
+2020-11-19 17:23:50,084:INFO:save_model() succesfully completed......................................

@@ -3,7 +3,7 @@ from pycaret.regression import load_model, predict_model
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 import random
-import pickle
+import pandas as pd
 
 # Load model
 
@@ -30,44 +30,39 @@ import pickle
 #   alder
 #   har lugar
 
-with open('./model/model.pkl', 'rb') as f:
-    load_model = pickle.load(f)
+
+final_model = load_model('./model/model')
+
+test = pd.read_csv('model//test.csv')
 
 def get_prediction(
     pclass,
+    sex,
     age,
     sibsp,
-    parch    
+    parch,
+    fare,
+    cabin    
 ):
 
-    print(load_model)
+    print(final_model)
 
-    model = {
-        "PassengerId": 0,
-        "Survived" : 0,
-        "Pclass" : 0,
-        "Name": "Ole",
-        "Sex": 0,
-        "Age": 0,
-        "SibSp": 0,
-        "Parch": 0,
-        "Ticket": 0,
-        "Fare": 0,
-        "Cabin": 0,
-        "Embarked": 0
-    }
+    variables = [0, pclass, sex, age, sibsp, parch, fare, cabin]
+    x = pd.DataFrame([variables])
+    print(x)
 
-    x = [[pclass, age, sibsp, parch]]
-
-    y = predict_model(load_model, data = x)
-
-    return {int(y)}
+    y = predict_model(final_model, data = x)
+    print(y.to_string)
+    return {y.data}
 
 def get_dummy_prediction(
     pclass,
+    sex,
     age,
     sibsp,
-    parch
+    parch,
+    fare,
+    cabin
 ):
 
     return {random.randint(0, 1)}
@@ -87,17 +82,23 @@ app.add_middleware(
 class ModelParams(BaseModel):
     pclass: int
     age:    float
+    sex:    int
     sibsp:  int
     parch:  int
+    fare:   int
+    cabin: str
 
 @app.post("/predict")
 def predict(params: ModelParams):
 
-    pred = get_prediction(
+    pred = get_dummy_prediction(
         params.pclass,
         params.age,
+        params.sex,
         params.sibsp,
-        params.parch
+        params.parch,
+        params.fare,
+        params.cabin
     )
 
     return pred

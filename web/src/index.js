@@ -1,29 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Figure from 'react-bootstrap/Figure'
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Form from './PersonaliaForm'
-import titanic from './img/titanic.png';
-
 
 ReactDOM.render(
   <React.StrictMode>
-    <Container>
-      <Row>
-        <h1>Would I survive the Titanic? 🤔</h1>
-      </Row>
-      <Row>
-        <Col><Figure.Image src={titanic} alt = "Sinking ship" fluid/></Col>
-        <Col><Form /></Col>
-      </Row>
-      
-    </Container>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
