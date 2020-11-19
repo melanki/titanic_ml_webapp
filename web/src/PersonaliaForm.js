@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-function PersonaliaForm (parentCallback) {
+function PersonaliaForm  ({setPrediction}) {
     
     const [personalia, setPersonalia] = useState(
         {
@@ -18,9 +18,10 @@ function PersonaliaForm (parentCallback) {
 
     const url = 'http://127.0.0.1:8000'
 
-    const submit = e => {
+    const submit = async e => {
         e.preventDefault()
-        let getPrediction = function() {fetch(`${url}/predict`, {
+        const getResult = async() => {
+            let response = await fetch(`${url}/predict`, {
             method: 'POST', 
             body: JSON.stringify({
                 "pclass": parseInt(personalia.pclass),
@@ -32,13 +33,18 @@ function PersonaliaForm (parentCallback) {
                 "cabin": personalia.cabin
             }),
             headers: { 'Content-Type': 'application/json'},
-         })
-            .then(res => res.json())
-            .then(json => {return json})
+             })
+             let json = await response.json()
+             return json
         }
-        const prediction = getPrediction()
-        console.log(parentCallback)
-        handleChange(prediction)
+
+        const getPrediction = async () => {
+            let jsonData = await getResult()
+            console.log(jsonData)
+            setPrediction(jsonData)
+        }
+
+        await getPrediction()
     }
 
     const handleChange = e => {
@@ -123,14 +129,8 @@ function PersonaliaForm (parentCallback) {
                 Submit
             </Button>
         </Form>
+        
     )
 }
 
-export default class PersonaliaFormComponent extends React.Component {
-
-    render() {
-        return (
-                <PersonaliaForm></PersonaliaForm>
-        )
-    }
-}
+export default PersonaliaForm

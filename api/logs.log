@@ -557,3 +557,5 @@ NameError: name 'prep_pipe' is not defined
 2020-11-19 18:30:52,550:INFO:load_model(model_name=./model/model, platform=None, authentication=None, verbose=True)
 2020-11-19 18:32:15,712:INFO:Initializing load_model()
 2020-11-19 18:32:15,712:INFO:load_model(model_name=./model/model, platform=None, authentication=None, verbose=True)
+2020-11-19 18:35:37,023:INFO:Initializing load_model()
+2020-11-19 18:35:37,023:INFO:load_model(model_name=./model/model, platform=None, authentication=None, verbose=True)
