@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Figure from 'react-bootstrap/Figure'
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import PersonaliaForm from './PersonaliaForm'
 import titanic from './img/titanic.png';
 
