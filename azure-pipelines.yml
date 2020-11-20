@@ -13,7 +13,7 @@ variables:
   dockerRegistryServiceConnection: '5cb927fd-9830-44ab-8603-eaf03b77bcad'
   imageRepository: 'dat158titanicapi'
   containerRegistry: 'dat158.azurecr.io'
-  dockerfilePath: '**/app/Dockerfile'
+  dockerfilePath: 'titanic_ml_webapp/app/Dockerfile'
   tag: '$(Build.BuildId)'
   
   # Agent VM image name
