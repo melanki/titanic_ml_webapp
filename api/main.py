@@ -31,9 +31,9 @@ import pandas as pd
 #   har lugar
 
 
-final_model = load_model('./model/model')
+final_model = load_model('model')
 
-test = pd.read_csv('model//test.csv')
+test = pd.read_csv('test.csv')
 
 def get_prediction(
     pclass,
