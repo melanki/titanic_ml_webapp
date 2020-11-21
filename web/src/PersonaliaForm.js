@@ -16,7 +16,7 @@ function PersonaliaForm  ({setPrediction}) {
         }
     )
 
-    const url = 'http://51.104.152.55/'
+    const url = 'http://51.104.152.55'
 
     const submit = async e => {
         e.preventDefault()
